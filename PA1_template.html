@@ -293,8 +293,8 @@ table(activity_na$day_type)</code></pre>
 <pre><code>## 
 ## weekday weekend 
 ##   12960    4608</code></pre>
-<p>Now we will make a panel plot using <code>ggplot2</code> to show the time series plot of the 5 minute intervals (x-axis) and average number of steps taken across all weekday days and weekend days (y-axis). We could use lattice here, which might be easier, but I’m 100% committed to ggplot!</p>
-<p>To Prepare the data for the panel plot we will use the <code>aggregate()</code> function, however we want to aggregate by interval and day_type which indicate if we are looking at a weekend day or weekday day. The function we will be applying is the mean. In addition we will create an additional dataframe <code>avg_by_day_type</code> which taeks the mean number of steps by day_type only, this creates a 2x2 data frame which is later used for labelling the plots with the mean number of steps taken per interval to ease comparison.</p>
+<p>Now we will make a panel plot using <code>ggplot2</code> to show the time series plot of the 5 minute intervals (x-axis) and average number of steps taken across all weekday days and weekend days (y-axis). We could use lattice here, which would probably be easier, but I’m 100% committed to ggplot!</p>
+<p>To prepare the data for the panel plot we will use the <code>aggregate()</code> function, however we want to aggregate by interval and day_type which indicate if we are looking at a weekend day or weekday day. The function we will be applying is the mean. In addition we will create an additional dataframe <code>avg_by_day_type</code> which taeks the mean number of steps by day_type only, this creates a 2x2 data frame which is later used for labelling the plots with the mean number of steps taken per interval to ease comparison.</p>
 <pre class="r"><code>#CREATE AGGREGATED DATASET &amp; SUMMARY DATASET TO ALLOW LABELLING
 sum_int_wday &lt;- aggregate(steps ~ interval + day_type, data = activity_na, mean)
 avg_by_day_type &lt;- aggregate(steps ~ day_type, data = activity_na, mean)
