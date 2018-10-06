@@ -2,7 +2,7 @@
 title: "Reproducible Research: Peer Assessment 1"
 author: David Robinson
 date: 06/10/2018
-output: 
+output:
   html_document:
     keep_md: true
 ---
@@ -126,7 +126,7 @@ g + geom_histogram(breaks=seq(0, to =22000, 2000), col = "grey50", fill = "navy 
             hjust=-0.25,col='orange',size=2.5)
 ```
 
-![](PA1_template_files/figure-html/hist_plot-1.png)<!-- -->
+![](/figure/hist_plot-1.png)<!-- -->
 
 Calculating the mean and median explicitly we can see:
 
@@ -170,7 +170,7 @@ g + geom_line(color = "navy blue", show.legend = F) +
             hjust=1.05,col='red',size=4)
 ```
 
-![](PA1_template_files/figure-html/steps_interval-1.png)<!-- -->
+![](figure/steps_interval-1.png)<!-- -->
 
 The interval number with the highest average daily number of steps is **835**.
 This can be computed using the code
@@ -235,9 +235,9 @@ g + geom_histogram(breaks=seq(0, to =22000, 2000), col = "grey50", fill = "navy 
             hjust=-0.25,col='orange',size=2.5)
 ```
 
-![](PA1_template_files/figure-html/replace_na-1.png)<!-- -->
+![](figure/replace_na-1.png)<!-- -->
 
-The mean is 10766 and the median is 10766 these are computed as follows:
+The mean is 1.0766\times 10^{4} and the median is 1.0766\times 10^{4} these are computed as follows:
 
 ```r
 mean(new_sum_by_date$total_steps)
@@ -254,7 +254,7 @@ median(new_sum_by_date$total_steps)
 ```
 ## [1] 10766.19
 ```
-The mean value has increased from **9354** to **10766** while the median has increased from **10395** to **10766**. Since the mean is equal to the median and the median is a non integer value, it implies that the method of replacing NAs has left the mean and median equal ie. median value is an average value, this makes intuative sense since earlier we found that **13.11%** of the data was NAs. Also since the mean has increased this implied that the NA values occurred in intervals where typically the wearer of the tracker was more active.
+The mean value has increased from **9354** to **1.0766\times 10^{4}** while the median has increased from **1.0395\times 10^{4}** to **1.0766\times 10^{4}**. Since the mean is equal to the median and the median is a non integer value, it implies that the method of replacing NAs has left the mean and median equal ie. median value is an average value, this makes intuative sense since earlier we found that **13.11%** of the data was NAs. Also since the mean has increased this implied that the NA values occurred in intervals where typically the wearer of the tracker was more active.
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
@@ -295,7 +295,7 @@ g+ geom_line(color = "navy blue") +
               hjust = -0.3, vjust = -0.3, color = "red", size = 3)
 ```
 
-![](PA1_template_files/figure-html/panel_plot-1.png)<!-- -->
+![](figure/panel_plot-1.png)<!-- -->
 
 From this panel plot we can compare the activity at weekdays (top plot) and weekends. We have annotated the graphs with the mean, we can see here that the average steps per interval at the weekend is higher than during the remainder of the weeks. However this doesn't tell the whole story as if we look at more detail at the plots, we can see that during the weekends activity starts later in the day (since time increases from left to right), and during the remainder of the day the activity levels are much higher than during the remainder of the week. In conclusion it appears the user of this tracking device is more active at the weekend than during the week. 
 
